@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { site } from "../config"
+import { site, asset } from "../config"
 import EmailCapture from "./EmailCapture"
 
 export default function Footer() {
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <img src="/images/logo.jpg" alt="AP Golf logo" className="h-12 w-12 rounded-full ring-1 ring-gold/40" />
+            <img src={asset("images/logo.jpg")} alt="AP Golf logo" className="h-12 w-12 rounded-full ring-1 ring-gold/40" />
             <p className="font-serif text-lg text-ivory">
               Aim for Perfection <span className="text-gold">Golf</span>
             </p>

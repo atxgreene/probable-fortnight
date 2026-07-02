@@ -24,3 +24,6 @@ export const site = {
   instagram: "",
   facebook: "",
 }
+
+/** Prefix a public/ path with the deploy base (works at "/" and under subpaths). */
+export const asset = (path) => import.meta.env.BASE_URL + path.replace(/^\//, "")

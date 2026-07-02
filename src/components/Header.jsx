@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
+import { asset } from "../config"
 
 const nav = [
   { to: "/", label: "Home" },
@@ -16,7 +17,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src="/images/logo.jpg" alt="AP Golf logo" className="h-10 w-10 rounded-full ring-1 ring-gold/40" />
+          <img src={asset("images/logo.jpg")} alt="AP Golf logo" className="h-10 w-10 rounded-full ring-1 ring-gold/40" />
           <span className="font-serif text-lg leading-tight tracking-wide text-ivory">
             Aim for Perfection <span className="text-gold">Golf</span>
           </span>

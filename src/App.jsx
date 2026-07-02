@@ -11,7 +11,7 @@ import Contact from "./pages/Contact"
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <div className="flex min-h-screen flex-col pb-20 md:pb-0">
         <Header />

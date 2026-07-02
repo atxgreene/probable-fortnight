@@ -4,7 +4,7 @@ import TrustBadges from "../components/TrustBadges"
 import UseCaseCards from "../components/UseCaseCards"
 import FAQAccordion from "../components/FAQAccordion"
 import { products } from "../data/products"
-import { site } from "../config"
+import { site, asset } from "../config"
 
 const product = products[0]
 
@@ -15,7 +15,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/product-course.jpg"
+            src={asset("images/product-course.jpg")}
             alt=""
             aria-hidden
             className="h-full w-full object-cover object-center opacity-35"
@@ -24,7 +24,7 @@ export default function Home() {
         </div>
         <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-24 text-center sm:px-6 sm:py-32">
           <img
-            src="/images/logo.jpg"
+            src={asset("images/logo.jpg")}
             alt="Aim for Perfection Golf logo"
             className="mb-8 h-32 w-32 rounded-full shadow-2xl shadow-black/60 ring-1 ring-gold/50 sm:h-40 sm:w-40"
           />
@@ -59,7 +59,7 @@ export default function Home() {
       <Section id="product">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
-            <img src="/images/product-pouch.jpg" alt={product.images[1].alt} className="h-full w-full object-cover" />
+            <img src={asset("images/product-pouch.jpg")} alt={product.images[1].alt} className="h-full w-full object-cover" />
           </div>
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold">The Signature Tool</p>
@@ -92,7 +92,7 @@ export default function Home() {
       <section className="border-y border-white/10 bg-charcoal">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20">
           <img
-            src="/images/wordmark.jpg"
+            src={asset("images/wordmark.jpg")}
             alt="Aim for Perfection — Matt 5:48 handwritten wordmark"
             className="mx-auto mb-8 w-64 rounded-xl sm:w-80"
           />
