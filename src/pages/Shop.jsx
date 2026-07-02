@@ -27,7 +27,7 @@ export default function Shop() {
       <div className="grid gap-10 lg:grid-cols-2">
         {/* Gallery */}
         <div>
-          <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
+          <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/50">
             <img
               src={product.images[imgIdx].src}
               alt={product.images[imgIdx].alt}
@@ -53,8 +53,8 @@ export default function Shop() {
 
         {/* Details */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">{site.brandShort}</p>
-          <h1 className="mt-2 font-serif text-4xl text-ivory">{product.name}</h1>
+          <p className="font-display text-xs font-bold uppercase tracking-[0.28em] text-gold">{site.brandShort}</p>
+          <h1 className="mt-2 font-display text-3xl font-extrabold uppercase tracking-tight text-ivory sm:text-4xl">{product.name}</h1>
           <p className="mt-1 text-mist">{product.tagline}</p>
           <p className="mt-5 text-3xl font-semibold text-gold-warm">${product.price}</p>
 
@@ -72,7 +72,7 @@ export default function Shop() {
           <div className="mt-8 flex items-end gap-4">
             <div>
               <label htmlFor="qty" className="mb-1.5 block text-sm font-medium text-ivory/90">Quantity</label>
-              <div className="flex items-center rounded-full border border-white/15 bg-charcoal">
+              <div className="flex items-center rounded-lg border border-white/15 bg-charcoal">
                 <button type="button" aria-label="Decrease quantity" onClick={() => setQty(Math.max(1, qty - 1))} className="px-4 py-2.5 text-gold">−</button>
                 <input
                   id="qty"
@@ -88,7 +88,7 @@ export default function Shop() {
             <button
               type="button"
               onClick={buy}
-              className="flex-1 rounded-full bg-gold px-8 py-3.5 font-semibold text-ink transition hover:bg-gold-warm"
+              className="flex-1 rounded-lg bg-gold px-8 py-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-gold-warm"
             >
               {site.stripePaymentLink ? "Buy Now" : "Request to Order"}
             </button>

@@ -16,11 +16,11 @@ export default function UseCaseCards() {
         <Link
           key={c.title}
           to="/custom-orders"
-          className="group rounded-2xl border border-white/10 bg-gradient-to-b from-charcoal to-charcoal-2 p-6 shadow-lg shadow-black/40 transition hover:border-gold/40"
+          className="group rounded-xl border border-white/10 bg-gradient-to-b from-charcoal to-charcoal-2 p-6 shadow-lg shadow-black/40 transition hover:border-gold/40"
         >
-          <h3 className="font-serif text-xl text-gold-warm">{c.title}</h3>
+          <h3 className="font-display text-lg font-bold uppercase tracking-wide text-gold-warm">{c.title}</h3>
           <p className="mt-2 text-sm leading-relaxed text-mist">{c.copy}</p>
-          <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-gold opacity-0 transition group-hover:opacity-100">
+          <p className="mt-4 font-display text-xs font-bold uppercase tracking-wider text-gold opacity-0 transition group-hover:opacity-100">
             Start a custom quote →
           </p>
         </Link>

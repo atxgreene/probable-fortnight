@@ -41,7 +41,7 @@ export default function Contact() {
       <div className="mx-auto max-w-xl">
         {status === "sent" ? (
           <div className="rounded-2xl border border-gold/40 bg-fairway/30 p-8 text-center">
-            <p className="font-serif text-2xl text-gold-warm">Message received.</p>
+            <p className="font-display text-2xl font-extrabold uppercase tracking-tight text-gold-warm">Message received.</p>
             <p className="mt-3 text-ivory/90">Thanks for reaching out — we'll get back to you shortly.</p>
           </div>
         ) : (
@@ -61,7 +61,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="rounded-full bg-gold px-6 py-3.5 font-semibold text-ink transition hover:bg-gold-warm disabled:opacity-60"
+              className="rounded-lg bg-gold px-6 py-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-gold-warm disabled:opacity-60"
             >
               {status === "sending" ? "Sending…" : "Send Message"}
             </button>

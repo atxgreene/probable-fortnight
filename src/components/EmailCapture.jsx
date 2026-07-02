@@ -35,9 +35,9 @@ export default function EmailCapture() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="you@email.com"
-        className="w-full rounded-full border border-white/15 bg-ink px-4 py-2 text-sm text-ivory placeholder:text-mist/60 focus:border-gold focus:outline-none"
+        className="w-full rounded-lg border border-white/15 bg-ink px-4 py-2 text-sm text-ivory placeholder:text-mist/60 focus:border-gold focus:outline-none"
       />
-      <button type="submit" className="shrink-0 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-ink transition hover:bg-gold-warm">
+      <button type="submit" className="shrink-0 rounded-lg bg-gold px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-ink transition hover:bg-gold-warm">
         Join
       </button>
     </form>

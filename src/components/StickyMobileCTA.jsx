@@ -9,13 +9,13 @@ export default function StickyMobileCTA() {
       <div className="flex gap-2">
         <Link
           to="/shop"
-          className="flex-1 rounded-full border border-gold/60 px-4 py-3 text-center text-sm font-semibold text-gold-warm"
+          className="flex-1 rounded-lg border border-gold/60 px-4 py-3 text-center font-display text-xs font-bold uppercase tracking-[0.1em] text-gold-warm"
         >
           Shop Divot Tools
         </Link>
         <Link
           to="/custom-orders"
-          className="flex-1 rounded-full bg-gold px-4 py-3 text-center text-sm font-semibold text-ink"
+          className="flex-1 rounded-lg bg-gold px-4 py-3 text-center font-display text-xs font-bold uppercase tracking-[0.1em] text-ink"
         >
           Custom Quote
         </Link>

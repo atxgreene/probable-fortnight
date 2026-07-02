@@ -23,7 +23,7 @@ export default function BulkOrders() {
         <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {specs.map((s) => (
             <div key={s.label} className="rounded-2xl border border-white/10 bg-gradient-to-b from-charcoal to-charcoal-2 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-gold">{s.label}</p>
+              <p className="font-display text-xs font-bold uppercase tracking-wider text-gold">{s.label}</p>
               <p className="mt-2 text-sm leading-relaxed text-ivory/85">{s.value}</p>
             </div>
           ))}
@@ -37,7 +37,7 @@ export default function BulkOrders() {
 
       <Section className="pt-4" id="quote">
         <div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-charcoal p-6 shadow-2xl shadow-black/50 sm:p-10">
-          <h2 className="mb-6 text-center font-serif text-2xl text-ivory">Request a Bulk Quote</h2>
+          <h2 className="mb-6 text-center font-display text-2xl font-extrabold uppercase tracking-tight text-ivory">Request a Bulk Quote</h2>
           <QuoteForm formName="bulk-order" />
         </div>
       </Section>

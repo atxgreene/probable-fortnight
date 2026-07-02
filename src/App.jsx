@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import AnnouncementBar from "./components/AnnouncementBar"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import StickyMobileCTA from "./components/StickyMobileCTA"
@@ -14,6 +15,7 @@ export default function App() {
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <div className="flex min-h-screen flex-col pb-20 md:pb-0">
+        <AnnouncementBar />
         <Header />
         <main className="flex-1">
           <Routes>

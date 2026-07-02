@@ -59,7 +59,7 @@ export default function QuoteForm({ compact = false, formName = "custom-order" }
   if (status === "sent") {
     return (
       <div className="rounded-2xl border border-gold/40 bg-fairway/30 p-8 text-center">
-        <p className="font-serif text-2xl text-gold-warm">Thank you.</p>
+        <p className="font-display text-2xl font-extrabold uppercase tracking-tight text-gold-warm">Thank you.</p>
         <p className="mx-auto mt-3 max-w-md text-ivory/90">
           We received your custom order request and will follow up with pricing, artwork
           requirements, and production timing.
@@ -119,7 +119,7 @@ export default function QuoteForm({ compact = false, formName = "custom-order" }
           name="artwork"
           type="file"
           accept="image/*,.pdf,.ai,.eps,.svg"
-          className="w-full cursor-pointer rounded-lg border border-dashed border-white/20 bg-ink px-4 py-3 text-sm text-mist file:mr-4 file:rounded-full file:border-0 file:bg-gold file:px-4 file:py-1.5 file:text-sm file:font-semibold file:text-ink"
+          className="w-full cursor-pointer rounded-lg border border-dashed border-white/20 bg-ink px-4 py-3 text-sm text-mist file:mr-4 file:rounded-md file:border-0 file:bg-gold file:px-4 file:py-1.5 file:text-sm file:font-semibold file:text-ink"
         />
         {!site.formEndpoint && (
           <p className="mt-1.5 text-xs text-mist/70">
@@ -141,7 +141,7 @@ export default function QuoteForm({ compact = false, formName = "custom-order" }
         <button
           type="submit"
           disabled={status === "sending"}
-          className="w-full rounded-full bg-gold px-6 py-3.5 font-semibold text-ink transition hover:bg-gold-warm disabled:opacity-60 sm:w-auto"
+          className="w-full rounded-lg bg-gold px-6 py-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-gold-warm disabled:opacity-60 sm:w-auto"
         >
           {status === "sending" ? "Sending…" : "Start a Custom Quote"}
         </button>
