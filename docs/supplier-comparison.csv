@@ -1,6 +1,11 @@
 Supplier,Location,Category,MOQ,Tooling Cost,Sample Cost,Unit Cost @50,Unit Cost @100,Unit Cost @250,Unit Cost @500,Unit Cost @1000,Packaging Options,Lead Time,Payment Terms,Communication Quality (1-5),Risk Notes,Status
 EXAMPLE - Acme Promo Co,USA (TX),Domestic promo supplier,50,$0,$25,$9.50,$8.75,$7.90,$7.10,$6.40,"pouch, card backing",3 weeks,Net 30,5,Higher unit cost; no tooling fee,Quoted
 EXAMPLE - Golden Coin Mfg,China (Guangdong),Challenge coin / enamel,100,$180,$40,-,$3.20,$2.60,$2.10,$1.75,"pouch, gift box, velvet bag",25 days + freight,50% deposit / 50% before ship,4,Verify with paid sample; sea freight adds 4-6 wks,Awaiting sample
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
+Lone Star Challenge Coins,Texas USA,Challenge coin / cut-to-shape,TBD,TBD,TBD,,,,,,"pouch, box (ask)",~14 business days after proof,TBD,,Texas-based; golf markers + divot tools in catalog; free quote/revisions,To contact
+Elite Promo Inc (EPI),"Burbank, CA USA",Golf accessory OEM,TBD,TBD,TBD,,,,,,ask,TBD,TBD,,Factory-direct OEM; USA-made choices; 650-513-1037,To contact
+PinMart,"Illinois, USA",Promo / enamel (has USA line),TBD,TBD,TBD,,,,,,ask,5-day rush available on USA enamel line,TBD,,Divot tool + custom marker products,To contact
+Golf Life Metals,USA,Golf-specific custom metal,No MOQ (reported),TBD,TBD,,,,,,ask,TBD,TBD,,Wholesale custom markers + divot tools; verify production origin,To contact
+Osborne Coinage,"Cincinnati, OH USA",US private mint (die-struck),TBD,TBD,TBD,,,,,,ask,TBD,TBD,,Genuinely made in USA; ask about divot shapes; likely higher cost,To contact
+GS-JJ,US office / overseas production,Challenge coin / enamel,No minimum,TBD,TBD,,,,,,"pouch, box",TBD,TBD,,Overseas price anchor for comparison,To contact
+Custom Comet,USA (service),Challenge coin / cut-to-shape,100 (may flex),TBD,TBD,,,,,,ask,TBD,TBD,,Handles interior cutouts,Backup
+Birdicorn,USA,Golf promo custom,25,TBD,TBD,,,,,,ask,4-5 weeks,TBD,,Free digital mockups,Backup
