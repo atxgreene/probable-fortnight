@@ -1,0 +1,30 @@
+/**
+ * Product data — edit prices, copy, and images here.
+ * See docs/CLIENT-HANDOFF.md → "How to update product price".
+ */
+export const products = [
+  {
+    id: "signature-ichthys",
+    name: "Signature Ichthys Divot Tool",
+    tagline: "The original Aim for Perfection divot tool",
+    price: 25, // PLACEHOLDER — confirm final retail price
+    compareAt: null,
+    shippingNote: "Ships in 2–4 business days. Flat-rate shipping.", // PLACEHOLDER
+    customNote:
+      "Want your tournament, church, or company logo on it? Custom and bulk orders are available.",
+    images: [
+      { src: "/images/product-course.jpg", alt: "Signature Ichthys Divot Tool held on the golf course" },
+      { src: "/images/product-pouch.jpg", alt: "Signature Ichthys Divot Tool in its clear carry pouch" },
+    ],
+    description:
+      "A premium divot repair tool built for golfers who carry their faith onto the course. Designed with a distinctive ichthys-inspired form and Aim for Perfection detailing, this piece is ideal for personal use, gifts, tournaments, church outings, and custom group orders.",
+    features: [
+      "Faith-inspired golf accessory — ichthys form with Matthew 5:48 detailing",
+      "Distinctive AP Golf design in polished metal and black enamel",
+      "Lightweight and easy to carry in a pocket or bag",
+      "Great for tournaments, gifts, and outings",
+      "Custom order options available",
+      "Bulk orders available by request",
+    ],
+  },
+]

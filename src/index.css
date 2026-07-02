@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #050505;
+  --color-charcoal: #111111;
+  --color-charcoal-2: #1a1a17;
+  --color-gold: #d6a83a;
+  --color-gold-warm: #f0c766;
+  --color-fairway: #244b35;
+  --color-ivory: #f8f4e8;
+  --color-mist: #a8a8a8;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-ivory font-sans antialiased;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}

@@ -1,0 +1,6 @@
+Supplier,Location,Category,MOQ,Tooling Cost,Sample Cost,Unit Cost @50,Unit Cost @100,Unit Cost @250,Unit Cost @500,Unit Cost @1000,Packaging Options,Lead Time,Payment Terms,Communication Quality (1-5),Risk Notes,Status
+EXAMPLE - Acme Promo Co,USA (TX),Domestic promo supplier,50,$0,$25,$9.50,$8.75,$7.90,$7.10,$6.40,"pouch, card backing",3 weeks,Net 30,5,Higher unit cost; no tooling fee,Quoted
+EXAMPLE - Golden Coin Mfg,China (Guangdong),Challenge coin / enamel,100,$180,$40,-,$3.20,$2.60,$2.10,$1.75,"pouch, gift box, velvet bag",25 days + freight,50% deposit / 50% before ship,4,Verify with paid sample; sea freight adds 4-6 wks,Awaiting sample
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
