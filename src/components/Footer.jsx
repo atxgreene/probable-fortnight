@@ -25,6 +25,7 @@ export default function Footer() {
             <li><Link className="hover:text-ivory" to="/shop">Shop Divot Tools</Link></li>
             <li><Link className="hover:text-ivory" to="/custom-orders">Custom Orders</Link></li>
             <li><Link className="hover:text-ivory" to="/bulk-orders">Bulk & Event Orders</Link></li>
+            <li><Link className="hover:text-ivory" to="/about">About Us</Link></li>
             <li><Link className="hover:text-ivory" to="/contact">Contact</Link></li>
           </ul>
           <p className="mt-6 text-mist">

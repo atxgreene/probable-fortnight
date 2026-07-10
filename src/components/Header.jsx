@@ -7,6 +7,7 @@ const nav = [
   { to: "/shop", label: "Shop" },
   { to: "/custom-orders", label: "Custom" },
   { to: "/bulk-orders", label: "Bulk & Events" },
+  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ]
 

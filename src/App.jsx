@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop"
 import Home from "./pages/Home"
 import Shop from "./pages/Shop"
 import CustomOrders from "./pages/CustomOrders"
+import About from "./pages/About"
 import BulkOrders from "./pages/BulkOrders"
 import Contact from "./pages/Contact"
 
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/custom-orders" element={<CustomOrders />} />
             <Route path="/bulk-orders" element={<BulkOrders />} />
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Home />} />
           </Routes>
