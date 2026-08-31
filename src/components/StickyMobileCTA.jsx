@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
+import { site } from "../config"
 
 export default function StickyMobileCTA() {
   const { pathname } = useLocation()
@@ -14,10 +15,10 @@ export default function StickyMobileCTA() {
           Shop Divot Tools
         </Link>
         <Link
-          to="/custom-orders"
+          to={site.customOrdersEnabled ? "/custom-orders" : "/about"}
           className="flex-1 rounded-lg bg-gold px-4 py-3 text-center font-display text-xs font-bold uppercase tracking-[0.1em] text-ink"
         >
-          Custom Quote
+          {site.customOrdersEnabled ? "Custom Quote" : "Our Story"}
         </Link>
       </div>
     </div>

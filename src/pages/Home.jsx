@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 import { Section, SectionHeading } from "../components/Section"
 import TrustBadges from "../components/TrustBadges"
-import UseCaseCards from "../components/UseCaseCards"
 import FAQAccordion from "../components/FAQAccordion"
+import ColorwayScroller from "../components/ColorwayScroller"
 import { products } from "../data/products"
 import { site, asset } from "../config"
 
@@ -39,12 +39,12 @@ export default function Home() {
             >
               Shop Divot Tools
             </Link>
-            <Link
-              to="/custom-orders"
+            <a
+              href="#colorways"
               className="rounded-lg border border-ivory/40 bg-ink/30 px-8 py-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ivory backdrop-blur transition hover:border-gold hover:text-gold-warm"
             >
-              Request a Custom Order
-            </Link>
+              See the Colors
+            </a>
           </div>
         </div>
       </section>
@@ -81,13 +81,13 @@ export default function Home() {
               >
                 Buy Now — ${product.price}
               </Link>
-              <Link to="/custom-orders" className="font-display text-sm font-semibold uppercase tracking-wide text-gold-warm hover:underline">
-                Customize it →
-              </Link>
             </div>
           </div>
         </div>
       </Section>
+
+      {/* Colorways — scroll-driven gallery */}
+      <ColorwayScroller />
 
       {/* Brand story */}
       <section className="border-y border-white/10 bg-charcoal">
@@ -111,24 +111,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      {/* Custom orders + use cases */}
-      <Section id="custom">
-        <SectionHeading
-          eyebrow="Custom Orders"
-          title="Custom divot tools for events, gifts, and groups"
-          lede="Whether you are planning a golf tournament, church fundraiser, corporate outing, bachelor party, or private club event, we can help create a meaningful custom divot tool for your group."
-        />
-        <UseCaseCards />
-        <div className="mt-10 text-center">
-          <Link
-            to="/custom-orders"
-            className="inline-block rounded-lg bg-gold px-8 py-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-gold-warm"
-          >
-            Start a Custom Quote
-          </Link>
-        </div>
-      </Section>
 
       {/* Founder note */}
       <section className="bg-fairway/20">
