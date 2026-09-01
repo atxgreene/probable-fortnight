@@ -1,15 +1,15 @@
 import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
-import { asset } from "../config"
+import { asset, site } from "../config"
 
 const nav = [
   { to: "/", label: "Home" },
   { to: "/shop", label: "Shop" },
-  { to: "/custom-orders", label: "Custom" },
-  { to: "/bulk-orders", label: "Bulk & Events" },
+  { to: "/custom-orders", label: "Custom", customOrders: true },
+  { to: "/bulk-orders", label: "Bulk & Events", customOrders: true },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
-]
+].filter((item) => site.customOrdersEnabled || !item.customOrders)
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -57,10 +57,10 @@ export default function Header() {
         {/* Right: CTA */}
         <div className="justify-self-end">
           <Link
-            to="/custom-orders"
+            to={site.customOrdersEnabled ? "/custom-orders" : "/shop"}
             className="hidden rounded-lg bg-gold px-4 py-2.5 font-display text-xs font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-gold-warm sm:inline-block"
           >
-            Request Quote
+            {site.customOrdersEnabled ? "Request Quote" : "Shop Now"}
           </Link>
           <Link to="/shop" className="font-display text-xs font-bold uppercase tracking-[0.12em] text-gold-warm sm:hidden">
             Shop
@@ -85,11 +85,11 @@ export default function Header() {
             </NavLink>
           ))}
           <Link
-            to="/custom-orders"
+            to={site.customOrdersEnabled ? "/custom-orders" : "/shop"}
             onClick={() => setOpen(false)}
             className="mt-2 block rounded-lg bg-gold px-4 py-3 text-center font-display text-sm font-bold uppercase tracking-[0.12em] text-ink"
           >
-            Request Custom Quote
+            {site.customOrdersEnabled ? "Request Custom Quote" : "Shop Divot Tools"}
           </Link>
         </nav>
       )}

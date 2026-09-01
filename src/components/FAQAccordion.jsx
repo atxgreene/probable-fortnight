@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { site } from "../config"
 
-export const faqs = [
+const customOrderFaqs = [
   {
     q: "Do you offer custom designs?",
     a: "Yes. Custom designs are available for golf tournaments, church groups, corporate outings, fundraisers, and private events.",
@@ -17,6 +18,14 @@ export const faqs = [
     q: "How long do custom orders take?",
     a: "Timing depends on quantity and manufacturing availability. Add your deadline in the quote request form and we'll confirm production timing with your quote.",
   },
+]
+
+export const faqs = [
+  {
+    q: "What colors does it come in?",
+    a: "Six: purple, sky blue, green, burgundy, white, and black. Every finish carries the same ichthys form and Matthew 5:48 detailing.",
+  },
+  ...(site.customOrdersEnabled ? customOrderFaqs : []),
   {
     q: "Is this a good gift?",
     a: "Yes. The divot tool is designed as a meaningful golf gift for players, groups, tournaments, and faith-based events.",

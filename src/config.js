@@ -20,6 +20,12 @@ export const site = {
   // Leave empty to run inquiry-first: the Buy button routes to the order form.
   stripePaymentLink: "",
 
+  // Custom + bulk ordering is on hold until that side of the business is ready.
+  // Flip to true to bring back the nav links, footer links, quote CTAs and
+  // announcement copy. The /custom-orders and /bulk-orders pages stay routed
+  // either way, so existing links never 404.
+  customOrdersEnabled: false,
+
   // Social placeholders (leave empty to hide in footer)
   instagram: "",
   facebook: "",

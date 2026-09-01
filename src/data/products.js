@@ -30,3 +30,19 @@ export const products = [
     ],
   },
 ]
+
+/**
+ * Colorways — the finishes the Signature tool ships in.
+ * To add one: drop a photo shot on a plain white background into
+ * public/images/colorways/, then add a row here. The scroll gallery,
+ * its labels, counter and swatch dots all read from this list.
+ * `hex` is sampled from the product render and colours the swatch dot + label.
+ */
+export const colorways = [
+  { id: "purple",   name: "Purple",   hex: "#401070", image: asset("images/colorways/purple.jpg") },
+  { id: "sky-blue", name: "Sky Blue", hex: "#60C0F8", image: asset("images/colorways/sky-blue.jpg") },
+  { id: "green",    name: "Green",    hex: "#205030", image: asset("images/colorways/green.jpg") },
+  { id: "burgundy", name: "Burgundy", hex: "#881820", image: asset("images/colorways/burgundy.jpg") },
+  { id: "white",    name: "White",    hex: "#FAFAF8", image: asset("images/colorways/white.jpg") },
+  { id: "black",    name: "Black",    hex: "#161619", image: asset("images/colorways/black.jpg") },
+]

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react"
+import { site } from "../config"
 
 const messages = [
   "Faith-inspired divot tools — designed to aim higher",
-  "Custom orders for tournaments, churches & events",
-  "Bulk pricing available — request a quote",
+  "Now in six colorways — purple, sky blue, green, burgundy, white & black",
+  ...(site.customOrdersEnabled
+    ? ["Custom orders for tournaments, churches & events", "Bulk pricing available — request a quote"]
+    : []),
 ]
 
 export default function AnnouncementBar() {
