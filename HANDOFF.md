@@ -1,76 +1,87 @@
-# Handoff — get the Aim for Perfection experience page live on Vercel
+# Handoff — publish the Aim for Perfection experience page
 
-**One job:** push this branch so Vercel publishes the immersive scroll page at
-`/experience`. Everything needed is already committed — no build step, no new
-Vercel project, no assets to gather.
+**Correction to the previous version of this file:** it claimed the work was
+"already committed" and that this repo "already auto-deploys to Vercel." Neither
+was true from your side, and you were right to stop. The commits existed only in
+the owner's local clone on Windows and were never pushed — that machine has no
+working GitHub credentials and no TTY, so it cannot push at all. The Vercel claim
+was an inference from `vercel.json` plus `aim-for-perfection.vercel.app`
+answering HTTP 200; the deploy mechanism behind that URL is **unverified**.
 
-## Do this
+## Getting the commits
+
+They arrive as a git bundle: `ap-golf-experience.bundle` (~1.2 MB), attached
+separately. It is based on `5d77e6e` (*Add About Us page with founder's story*),
+which your clone already has.
 
 ```bash
+git bundle verify /path/to/ap-golf-experience.bundle
+git fetch /path/to/ap-golf-experience.bundle feat/colorway-gallery-and-founder:feat/colorway-gallery-and-founder
 git checkout feat/colorway-gallery-and-founder
-git push -u origin feat/colorway-gallery-and-founder
 ```
 
-Vercel is already connected to this repo, so the push produces a preview
-deployment. Confirm the page loads at `<deployment-url>/experience`, then merge
-into `claude/aim-perfection-golf-site-xofwls` (the default branch) to put it on
-the production URL — currently `aim-for-perfection.vercel.app/experience`.
+That gives you two commits — `42fc61d` (colorway gallery, founder portrait,
+custom-orders flag) and `0c4c0a0` (the `/experience` page). Then push and open a
+PR as normal.
 
-Note the default branch also triggers `.github/workflows/deploy-pages.yml`,
-which republishes GitHub Pages. That is expected; both hosts serve the same
-build.
-
-## What's on the branch
+## What the branch contains
 
 | Path | What it is |
 |---|---|
-| `public/experience/index.html` | The immersive page. **One self-contained 1.2 MB file** — fonts, photos and animation are inlined, zero dependencies. Do not hand-edit; see "Regenerating" below. |
-| `vercel.json` | The SPA catch-all rewrite now excludes `/experience`, so the static page is served instead of the React app. **Don't revert this** or `/experience` will render the React site. |
+| `public/experience/index.html` | The immersive page. One self-contained 1.2 MB file — fonts, photos and animation inlined, no dependencies. Don't hand-edit; see "Regenerating". |
+| `vercel.json` | The SPA catch-all rewrite now excludes `/experience` (`/((?!experience).*)`). Without this the rewrite swallows the path and serves the React app instead. |
 | `src/components/ColorwayScroller.jsx` | Scroll-driven six-colorway gallery for the React site. |
-| `public/images/colorways/*.jpg`, `public/images/founder.jpg` | Product renders and the founder portrait. |
-| `src/config.js` → `customOrdersEnabled` | Custom/bulk ordering is parked. `false` hides the nav links, footer links, CTAs, announcement copy and FAQ entries. Both routes stay registered so old links never 404. Flip to `true` to bring it all back. |
+| `public/images/colorways/*.jpg`, `public/images/founder.jpg` | Product renders and founder portrait. |
+| `src/config.js` → `customOrdersEnabled` | Custom/bulk ordering is parked behind this flag (`false`): hides nav links, footer links, CTAs, announcement copy, FAQ entries. Both routes stay registered so old links never 404. Flip to `true` to restore. |
 
-## Context you may not have
+## Deployment is an open question — please check before assuming
 
-The brand runs on two sites by design:
+`aim-for-perfection.vercel.app` is live, but nobody here knows how it is wired.
+Before promising a URL, confirm whether this repo has a Vercel project attached.
+If it doesn't, the page still ships via the existing GitHub Pages workflow
+(`.github/workflows/deploy-pages.yml`, triggered on the default branch) and will
+be served at `atxgreene.github.io/probable-fortnight/experience/`. Either host is
+fine — just verify which one is real rather than inheriting the assumption.
+
+## Context
+
+Two sites by design:
 
 - **Shopify** (theme "AP Golf", store `qpsdcu-su.myshopify.com`) — product, cart,
-  checkout. It is the intended front door.
-- **This page** — a showcase. It exists separately because the Shopify theme
-  carries ~200 KB of Dawn CSS/JS plus a blurred sticky header that repaints every
-  scroll frame, so it can't scrub as smoothly no matter how the animation is
-  written. Keeping the showcase framework-free is the whole point.
+  checkout. Intended front door on `afpgolf.com`.
+- **This page** — a showcase. Separate because the Shopify theme carries ~200 KB
+  of Dawn CSS/JS plus a blurred sticky header that repaints every scroll frame,
+  so it can't scrub as smoothly however the animation is written. Keeping the
+  showcase framework-free is the point.
 
-**The React site in `src/` is being retired.** Shopify replaced its shop, about
-and contact pages. Don't invest in it; the only parts still wanted are the
-colorway component and the images above.
+## Two external blockers — don't work around them
 
-## Two things are blocked (not your problem, don't work around them)
+1. **`afpgolf.com` does not resolve.** Namecheap overrides its delegation with
+   `failed-whois-verification.namecheap.com`; ICANN contact verification was
+   never completed. The Namecheap panel shows "ACTIVE", which is registration
+   status, not resolution. **Don't attach a custom domain yet.**
+2. **The Shopify store is on a `trial` plan**, so its storefront password can't be
+   lifted until a plan is chosen. The page's buy buttons point at
+   `qpsdcu-su.myshopify.com`, which resolves but shows a password wall. Expected.
 
-1. **`afpgolf.com` does not resolve.** Namecheap is overriding its delegation
-   with `failed-whois-verification.namecheap.com` because ICANN contact
-   verification was never completed. The Namecheap panel misleadingly shows
-   "ACTIVE" — that's registration status, not resolution. The owner has to click
-   the verification email. **Do not attach a custom domain yet.**
-2. **The Shopify store is on a `trial` plan**, so its storefront password can't
-   be removed until a plan is selected. The page's buy buttons therefore point at
-   `qpsdcu-su.myshopify.com`, which resolves but shows a password wall. That is
-   expected for now.
+## Retiring the React site is NOT approved
 
-## Regenerating the page (only if you need to change it)
+The previous handoff stated this as decided. It wasn't — the owner confirmed only
+that Shopify takes the root domain. **Don't remove or de-link any React pages**
+until the owner says so explicitly. You were right to ask.
 
-The source lives outside this repo, on the owner's machine:
+## Regenerating the page
+
+Source lives outside this repo, on the owner's machine:
 `C:\Users\austi\iCloudDrive\Projects\AP-Golf-Shopify\immersive\`
 
 ```
 index.template.html   <- edit this
 build.js              <- node build.js  (inlines fonts + photos)
-index.html            <- output, copied here to public/experience/
+index.html            <- output, copied to public/experience/
 ```
 
-`build.js` has a single `SHOP_DOMAIN` constant at the top that builds every buy
-button. Switch it from the myshopify host to `https://afpgolf.com` once that
-domain resolves, rebuild, and copy the output over `public/experience/index.html`.
-
-If you can't reach that machine, edit `public/experience/index.html` directly as
-a one-off and tell the owner, so the template doesn't drift from what's live.
+`build.js` has one `SHOP_DOMAIN` constant at the top that builds every buy
+button. It currently points at the myshopify host; switch it to
+`https://afpgolf.com` once that domain resolves, rebuild, and copy the output
+over `public/experience/index.html`.
