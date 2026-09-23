@@ -29,6 +29,19 @@ export default function About() {
 
       {/* Story */}
       <Section className="max-w-3xl">
+        <figure className="mb-12 text-center">
+          <img
+            src={asset("images/founder.jpg")}
+            alt="The founder of Aim for Perfection Golf"
+            width="820"
+            height="1017"
+            loading="lazy"
+            className="mx-auto w-full max-w-xs rounded-2xl border border-gold/25 p-2"
+          />
+          <figcaption className="mt-4 font-display text-xs font-bold uppercase tracking-[0.24em] text-gold">
+            Founder &amp; Pastor
+          </figcaption>
+        </figure>
         <div className="space-y-6">
           {paragraphs.map((p) => (
             <p key={p.slice(0, 24)} className="text-lg leading-relaxed text-ivory/85">

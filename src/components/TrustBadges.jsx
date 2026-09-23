@@ -1,8 +1,7 @@
 const badges = [
-  { icon: "✦", label: "Custom Orders Available" },
+  { icon: "✦", label: "Six Colorways" },
   { icon: "⛳", label: "Golf Tournament Ready" },
   { icon: "✚", label: "Faith-Inspired Design" },
-  { icon: "▤", label: "Bulk Event Orders" },
   { icon: "❦", label: "Giftable Product" },
 ]
 

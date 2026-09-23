@@ -23,8 +23,12 @@ export default function Footer() {
           <p className="mb-3 font-display text-xs font-bold uppercase tracking-[0.2em] text-gold">Explore</p>
           <ul className="space-y-2 text-mist">
             <li><Link className="hover:text-ivory" to="/shop">Shop Divot Tools</Link></li>
-            <li><Link className="hover:text-ivory" to="/custom-orders">Custom Orders</Link></li>
-            <li><Link className="hover:text-ivory" to="/bulk-orders">Bulk & Event Orders</Link></li>
+            {site.customOrdersEnabled && (
+              <>
+                <li><Link className="hover:text-ivory" to="/custom-orders">Custom Orders</Link></li>
+                <li><Link className="hover:text-ivory" to="/bulk-orders">Bulk & Event Orders</Link></li>
+              </>
+            )}
             <li><Link className="hover:text-ivory" to="/about">About Us</Link></li>
             <li><Link className="hover:text-ivory" to="/contact">Contact</Link></li>
           </ul>
