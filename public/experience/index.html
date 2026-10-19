@@ -235,8 +235,12 @@
     display:grid;place-items:center;color:#141310;background:#fff;
     border:1px solid rgba(20,19,15,.16);box-shadow:0 6px 18px rgba(0,0,0,.12);
     transition:transform .2s ease,background .2s ease;
+    touch-action:manipulation;-webkit-tap-highlight-color:transparent;
   }
-  .car__arrow:hover{transform:scale(1.07)}
+  /* Hover only where there is a real pointer: on iOS a :hover effect can swallow
+     the first tap, so the arrow seemed to need two taps. */
+  @media (hover:hover) and (pointer:fine){.car__arrow:hover{transform:scale(1.07)}}
+  .car__arrow:active{transform:scale(.94)}
   .car__arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   .car__arrow svg{width:22px;height:22px}
   .dots{display:flex;justify-content:center;gap:1.1rem;margin-top:4.5vh}
@@ -340,7 +344,7 @@
     .hero__inner{padding:0 1.5rem 13vh}
     .hero__cue{display:none}
     .car{gap:0}
-    .car__arrow{position:absolute;top:50%;translate:0 -50%;z-index:3;width:46px;height:46px;background:rgba(255,255,255,.92)}
+    .car__arrow{position:absolute;top:50%;margin-top:-23px;z-index:3;width:46px;height:46px;background:rgba(255,255,255,.92)}
     .car__arrow--prev{left:.55rem}.car__arrow--next{right:.55rem}
   }
 
